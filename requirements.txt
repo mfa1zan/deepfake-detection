@@ -1,0 +1,12 @@
+flask
+gdown
+opencv-python
+torch
+torchvision
+
+
+
+tensorflow==2.15.0
+numpy==1.25.2
+dlib
+scikit-learn

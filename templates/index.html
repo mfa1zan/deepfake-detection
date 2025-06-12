@@ -1,0 +1,247 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+
+    <!--Swiper CSS-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/swiper-bundle.min.css') }}"> 
+    
+    <!--CSS Styles-->  
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+<body>
+
+    <!--header design-->
+    <header class="header">
+        <a href="#" class="logo">Project.</a>
+        <i class='bx bx-menu' id="menu-icon"></i>
+
+        <nav class="navbar">
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#detect">Detect</a>
+            <a href="#member">Members</a>
+        </nav>
+    </header> 
+
+
+    <!--home section design-->
+
+    <section class="home" id="home">
+        <div class="home-content">
+            <h3>Detect Deepfakes With</h3>
+            <h1>Deep Learning</h1>
+            <p>Differentiate between fake and real videos using Neural Networks, Deep Learning, and Artificial Intelligence</p>
+            <a href="#detect" class="btn">Upload Now</a>
+        </div>
+
+        <div class="home-img">
+            <img src="{{ url_for('static', filename='images/f.png') }}">
+        </div>
+    </section>
+
+    
+    <!--about section design-->
+    <section class="about" id="about">
+        <div class="about-img">
+            <img src="{{ url_for('static', filename='images/download1.png') }}">
+        </div>
+        <div class="about-content">
+            <h1 class="heading">About</h1>
+            <h3>Deepfake Detection Using</h3>
+            <h2>Neural Networks</h2>
+            <p>This project detects deepfake videos using a hybrid CNN-LSTM neural network. We utilized the FaceForensics++ dataset, extracting facial landmarks from video frames with dlib and OpenCV. Each video was processed into sequences of 68 (x, y) facial landmarks per frame, normalized and organized for model input. The model architecture combines convolutional layers to capture spatial patterns within each frame and LSTM layers to learn temporal changes across frames.
+                The system was trained and validated on carefully split train, validation, and test sets. We evaluated model performance using accuracy, confusion matrix, precision, recall, and F1-score, demonstrating robust detection of manipulated content.
+                A user-friendly Flask web interface allows uploading new videos for real-time analysis and prediction. The pipeline delivers reliable deepfake detection to help combat video-based misinformation and manipulation.
+            </p>
+        </div>
+    </section>
+
+
+    <!--upload section design-->
+
+    <section class="detect" id="detect">
+        <div class="headinger">
+            <h1>Detection Section</h1>
+        </div>
+        <div class="container">
+    
+            <!-- Left Side: Upload Form -->
+            <div class="left-side">
+                <h1>Upload Video/Image</h1>
+        
+                <form id="uploadForm" action="/upload" method="POST" enctype="multipart/form-data">
+
+                    <label for="fileInput" class="upload-label">Choose File</label>
+                    <input type="file" id="fileInput" name="file" hidden>
+        
+                    <div id="fileInfo">
+                        <div id="fileName">No file chosen</div>
+                        <button type="button" id="removeFileBtn" style="display:none;">Remove File</button>
+                    </div>
+        
+                    <button type="submit" class="upload-btn">Upload</button>
+    
+                    <!-- 👇 NEW: Detect Button -->
+                    <button type="button" id="detectBtn" class="detect-btn" style="margin-top: 15px;" disabled>Detect</button>
+                </form>
+            </div>
+        
+            <!-- Right Side: Preview and Loading -->
+            <div class="right-side">
+                <div id="previewArea">
+                    <b><p>No file uploaded yet.</p></b>
+                </div>
+        
+                <div id="progressContainer" style="display:none;">
+                    <div id="progressBar"><span id="progressText">0%</span></div>
+                </div>
+        
+                <!-- Detection Result Here -->
+                <div id="resultArea" style="display:none; margin-top: 20px;">
+                    <h2>Detection Result:</h2>
+                    <p id="resultText"></p>
+                </div>
+            </div>
+        
+        </div>   
+    </section>
+    
+
+
+
+    <!--members section design-->
+
+    <section class="members" id="member">
+        <div class="div-member">
+            <h1 class="member">Group Members</h1>
+        </div>
+        <div class="slide-container swiper">
+            <div class="slide-content">
+                <div class="card-wrapper swiper-wrapper">
+                    <div id="card-box" class="card swiper-slide" onclick="window.open('https://www.linkedin.com/in/hammadahm3d/', '_blank')">
+                        <div class="img-content">
+                            <span class="overlay"></span>
+
+                            <div class="card-img">
+                                <img src="{{ url_for('static', filename='images/WhatsApp Image 2025-04-28 at 14.52.04_90ca477a.jpg') }}" class="card-img">
+                            </div>
+                        </div>
+
+                        <div class="card-content">
+                            <h2 class="name">Hammad Ahmed</h2>
+                            <h3 class="roll">BSCS51F22S071</h3>
+                            <p class="desc">Initially assisted in dataset sourcing. Designed the User-Interface of Flask app, and ensured to work properly</p>
+                        </div>
+                    </div>
+                    <div id="card-box" class="card swiper-slide" onclick="window.open('https://www.linkedin.com/in/muhammad-tayyab-12b816279/', '_blank')">
+                        <div class="img-content">
+                            <span class="overlay"></span>
+
+                            <div class="card-img">
+                                <img src="{{ url_for('static', filename='images/123.jpg') }}" class="card-img">
+                            </div>
+                        </div>
+
+                        <div class="card-content">
+                            <h2 class="name">Muhammad Tayyab</h2>
+                            <h3 class="roll">BSCS51F22S070</h3>
+                            <p class="desc">Contributed to early neural network architecture research. Provided guidance on model selection based on research</p>
+                        </div>
+                    </div>
+                    <div id="card-box" class="card swiper-slide" onclick="window.open('https://www.linkedin.com/in/muhammad-faizan-ba5587316/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app', '_blank')">
+                        <div class="img-content">
+                            <span class="overlay"></span>
+
+                            <div class="card-img">
+                                <img src="{{ url_for('static', filename='images/IMG-20250331-WA0029.jpg') }}" class="card-img">
+                            </div>
+                        </div>
+
+                        <div class="card-content">
+                            <h2 class="name">Muhammad Faizan</h2>
+                            <h3 class="roll">BSCS51F22S089</h3>
+                            <p class="desc">Worked in preprocessing. Trained the model using neural networks.Embedded model into the Flask application</p>
+                        </div>
+                    </div>
+                    <div id="card-box" class="card swiper-slide" onclick="window.open('https://www.linkedin.com/in/hammadahm3d/', '_blank')">
+                        <div class="img-content">
+                            <span class="overlay"></span>
+
+                            <div class="card-img">
+                                <img src="{{ url_for('static', filename='images/WhatsApp Image 2025-04-28 at 15.30.47_a3d1fe79.jpg') }}" class="card-img">
+                            </div>
+                        </div>
+
+                        <div class="card-content">
+                            <h2 class="name">Abdullah Akram</h2>
+                            <h3 class="roll">BSCS51F22S058</h3>
+                            <p class="desc">Focused on researching neural networks and deepfake detection methods. Helped with dataset exploration and validation</p>
+                        </div>
+                    </div>
+                    <div id="card-box" class="card swiper-slide" onclick="window.open('https://www.linkedin.com/in/hammadahm3d/', '_blank')">
+                        <div class="img-content">
+                            <span class="overlay"></span>
+
+                            <div class="card-img">
+                                <img src="{{ url_for('static', filename='images/Screenshot 2025-04-28 153624.png') }}" class="card-img">
+                            </div>
+                        </div>
+
+                        <div class="card-content">
+                            <h2 class="name">Maria Kainat</h2>
+                            <h3 class="roll">BSCS51F22S055</h3>
+                            <p class="desc">Researched the Flask framework. Contributed to the design and structure of the initial Flask UI for video upload/testing</p>
+                        </div>
+                    </div>
+                    <div id="card-box" class="card swiper-slide" onclick="window.open('https://www.linkedin.com/in/hammadahm3d/', '_blank')">
+                        <div class="img-content">
+                            <span class="overlay"></span>
+
+                            <div class="card-img">
+                                <img src="{{ url_for('static', filename='images/HD-wallpaper-hijab-art-cartoon-islam-islamic-vector.jpg') }}" class="card-img">
+                            </div>
+                        </div>
+
+                        <div class="card-content">
+                            <h2 class="name">Umme Habiba</h2>
+                            <h3 class="roll">BSCS51F22S087</h3>
+                            <p class="desc">Researched the Flask framework. Contributed to the design and structure of the initial Flask UI for video upload/testing</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+
+    <!--Footer Design-->
+    <footer class="footer">
+        <div class="footer-text">
+            <p>Copyright &copy; 2025 by Team | All Rights Reserved.</p>
+        </div>
+
+        <div class="footer-iconTop">
+            <a href="#home"><i class="bx bx-up-arrow-alt"></i></a>
+        </div>
+    </footer>
+
+</body>
+
+
+<!--Swiper JS-->
+<script src="{{ url_for('static', filename='js/swiper-bundle.min.js') }}"></script>
+
+<!--JavaScript-->
+<script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+</html>

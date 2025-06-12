@@ -1,0 +1,4 @@
+venv/
+models/*.h5
+models/*.npy
+models/*.dat
