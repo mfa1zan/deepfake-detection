@@ -170,7 +170,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 For questions, suggestions, or collaboration opportunities, please reach out:
 
 - 📧 Email: me.faizan25@gmail.com
-- 💼 LinkedIn: https://www.linkedin.com/in/muhammad-faizan-ba5587316/
+- 💼 LinkedIn: [Muhammad Faizan](https://www.linkedin.com/in/muhammad-faizan-me/)
 - 🐙 GitHub: https://github.com/mfa1zan
 
 ---
