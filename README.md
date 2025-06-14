@@ -143,9 +143,9 @@ Flask_app/
 
 ## ⚠️ Important Notes
 
-- 📦 Model files (`.h5`, `.npy`) are excluded from the repository due to size constraints
-- 🔗 Contact the maintainer for access to pre-trained models
-- 📚 Training notebooks and preprocessing scripts available upon request
+- 📦 Model files (`.h5`, `.npy`) are **excluded** from this public repository due to size and privacy reasons. These files are stored securely in a private repository.
+- 🔗 If you need access to the pre-trained model files for testing or research purposes, please **contact me**. Access may be granted upon request.
+- 📚 Training notebooks, (including Colab notebooks), and preprocessing scripts are available upon request.
 - 🎯 Supports common video formats: MP4, AVI, MOV
 
 > **Note:** This detector was developed and trained on my local machine, so results may not be state-of-the-art or perfect. Use accordingly.
